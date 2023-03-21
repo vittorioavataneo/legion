@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Dettagli corsi</title>
+  <style>
+      body {
+        color: white;
+        font-size: 22px;
+      }
+    </style>
+  <style>
+      a {
+        color: white;
+        font-size: 18px;
+      }
+    </style>
+
+</head>
+<body style="background-color:black">
+<a href="http://localhost:8080/home">Home page🏠</a><br>
+<h1>Dettagli corsi 📖</h1>
+  <table border="2">
+    <thead>
+    <tr>
+      <th> Id Corso </th>
+      <th> Titolo </th>
+      <th> Descrizione </th>
+      <th> Programma </th>
+      <th> Durata </th>
+      <th> Attivo </th>
+      <th> Inizio Corso </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each = "c : ${courses}">
+      <td th:text = "${c.id}"></td>
+      <td th:text = "${c.title}"></td>
+      <td th:text = "${c.description}"></td>
+      <td th:text = "${c.program}"></td>
+      <td th:text = "${c.duration}"></td>
+      <td th:text = "${c.active}"></td>
+      <td th:text = "${c.createdAt}"></td>
+    </tr>
+    </tbody>
+  </table>
+</body>
+</html>

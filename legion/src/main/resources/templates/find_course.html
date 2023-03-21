@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista dei corsi</title>
+    <style>
+      body {
+        color: white;
+        font-size: 22px;
+      }
+      a {
+        color: white;
+        font-size: 18px;
+      }
+    </style>
+</head>
+<body style="background-color:black">
+<a href="http://localhost:8080/home">Home page🏠</a><br><br>
+    <form action = "findCourseById" method="get">
+        <label for="courseId">Id Corso:</label>
+        <input type = "number" name="courseId" id="courseId">
+        <button style="font-size: 22px">Ricerca Corso per Id 🔎</button>
+    </form><br>
+
+    <form action = "findCoursesByTitleContains" method="get">
+        <label for = "part">Inserisci il titolo del corso che vuoi cercare:</label>
+        <input type = "text" name="part" id="part">
+        <button style="font-size: 22px">Ricerca Corso per Titolo 🔎</button>
+    </form><br>
+
+    <table border="2">
+        <thead>
+        <tr>
+            <th> Id Corso </th>
+            <th> Titolo </th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr th:each = "c : ${find_course}">
+                <td><a th:text ="${c.id}" th:href = "@{/findCourseById(courseId=${c.id})}"></a></td>
+                <td th:text = "${c.title}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

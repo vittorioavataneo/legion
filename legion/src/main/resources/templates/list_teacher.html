@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dettagli Professori</title>
+    <style>
+      body {
+        color: white;
+        font-size: 22px;
+      }
+      a {
+        color: white;
+        font-size: 18px;
+      }
+    </style>
+
+</head>
+<body style="background-color:black">
+<a href="http://localhost:8080/home">Home page🏠</a><br>
+<h1>Dettagli Professori 🧑‍🏫</h1>
+<table border="2">
+    <thead>
+        <tr>
+            <th> Id Professore </th>
+            <th> Nome </th>
+            <th> Cognome </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each = "t : ${teachers}">
+            <td><a th:text="${t.id}" th:href="@{'http://localhost:8080/findTeacherById?id=' + ${t.id}}"></a></td>
+            <td th:text = "${t.firstname}"></td>
+            <td th:text = "${t.lastname}"></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

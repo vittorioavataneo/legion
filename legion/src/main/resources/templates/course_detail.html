@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dettagli corso</title>
+    <style>
+      body {
+        color: white;
+        font-size: 22px;
+      }
+      a {
+        color: white;
+        font-size: 18px;
+      }
+    </style>
+
+</head>
+<body style="background-color:black">
+<a href="http://localhost:8080/home">Home page🏠</a><br>
+
+    <div th:if = "${course.id==0}">
+        <h2>Il corso ricercato non esiste</h2>
+    </div>
+  <div th:unless = "${course.id==0}">
+  <h1>Dettagli corso</h1>
+    <p th:text="'Id: '+ ${course.id}">000</p>
+    <p th:text="'Titolo: '+${course.title}">Java for Dummies</p>
+    <p th:text="'Descrizione: '+${course.description}">Introduction to Java</p>
+    <p th:text="'Programma: '+${course.program}">Introduction to Java</p>
+    <p th:text="'Durata: '+${course.duration}">Introduction to Java</p>
+    <p th:text="'Data di inizio: '+${course.createdAt}">2022/06/12</p>
+    <p th:text="'Attivo?: '+${course.active}">true</p>
+  </div>
+</body>
+</html>

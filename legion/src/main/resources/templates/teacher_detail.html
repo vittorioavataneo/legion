@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Risultato ricerca id Professore</title>
+  <style>
+      body {
+        color: white;
+        font-size: 22px;
+      }
+      a {
+        color: white;
+        font-size: 18px;
+      }
+    </style>
+
+</head>
+<body style="background-color:black">
+
+<a href="http://localhost:8080/home">Home page🏠</a><br>
+<h1> Dettagli Professore 🧑‍🏫</h1><br>
+
+<table border="2">
+  <thead>
+  <tr>
+    <th> Id Professore </th>
+    <th> Nome </th>
+    <th> Cognome </th>
+    <th> Data di Nascita </th>
+    <th> Sesso </th>
+    <th> Email </th>
+    <th> Numero di telefono </th>
+    <th> Username </th>
+    <th> Password </th>
+    <th> IVA </th>
+    <th> Assunto? </th>
+    <th> Data di assunzione </th>
+    <th> Livello </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td th:text="${teacher.id}"></td>
+    <td th:text="${teacher.firstname}"></td>
+    <td th:text="${teacher.lastname}"></td>
+    <td th:text="${teacher.dob}"></td>
+    <td th:text="${teacher.sex}"></td>
+    <td th:text="${teacher.email}"></td>
+    <td th:text="${teacher.cellNumber}"></td>
+    <!--Address??? -->
+    <td th:text="${teacher.username}"></td>
+    <td th:text="${teacher.password}"></td>
+    <td th:text="${teacher.pIVA}"></td>
+    <td th:text="${teacher.isEmployee}"></td>
+    <td th:text="${teacher.hireDate}"></td>
+    <td th:text="${teacher.fireDate}"></td>
+    <td th:text="${teacher.level}"></td>
+  </tr>
+  </tbody>
+</table>
+
+</body>
+</html>

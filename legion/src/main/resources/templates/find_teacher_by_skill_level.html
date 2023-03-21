@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista dei Professori</title>
+  <style>
+      body {
+        color: white;
+        font-size: 22px;
+      }
+      a {
+        color: white;
+        font-size: 18px;
+      }
+    </style>
+</head>
+<body style="background-color:black">
+  <a href="http://localhost:8080/home">Home page🏠</a><br><br>
+  <form action = "findTeachersWithSkillAndLevel" method="get">
+
+    <label for = "idSkill">Id Skill:</label>
+    <input type = "number" name="idSkill" id="idSkill">
+
+    <!--<p>Inserisci il livello:<p>
+    <input type="radio" name="skillLevel" id="base" value="BASE">
+    <label for="base">BASE</label><br>
+    <input type="radio" name="skillLevel" id="intermediate" value="INTERMEDIATE">
+    <label for="intermediate">INTERMEDIATE</label><br>
+    <input type="radio" name="skillLevel" id="advanced" value="ADVANCED">
+    <label for="advanced">ADVANCED</label><br>
+    <input type="radio" name="skillLevel" id="guru" value="GURU">
+    <label for="guru">GURU</label><br>-->
+
+    <select name = "skillLevel">
+      <option th:each = "levelOption : ${T(org.generation.italy.legion.model.entities.Level).values()}"
+              th:value = "${levelOption}" th:text="${levelOption}"></option>
+    </select>
+
+    <!--<select name="skillLevel">
+     <option value = "BASE">Base</option>
+     <option value = "INTERMEDIATE">Intermediate</option>
+     <option value = "ADVANCED">Advanced</option>
+     <option value = "GURU">Guru</option>
+   </select>-->
+
+   <button style="font-size: 22px">Ricerca Professore 🔎</button>
+ </form><br>
+
+ <table border="2">
+   <thead>
+   <tr>
+     <th> Nome </th>
+     <th> Cognome </th>
+   </tr>
+   </thead>
+   <tbody>
+   <tr th:each = "t : ${find_teacher_by_skill_level}">
+     <td th:text = "${t.firstname}"></td>
+     <td th:text = "${t.lastname}"></td>
+   </tr>
+   </tbody>
+ </table>
+</body>
+</html>

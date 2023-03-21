@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Address</title>
+    <style>
+      body {
+        color: white;
+      }
+    </style>
+    <style>
+      a {
+        color: white;
+      }
+    </style>
+</head>
+<body style="background-color:black">
+<a href="http://localhost:8080/home">Home page🏠</a><br>
+<h1>AGGIUNGI L'INDIRIZZO</h1>
+<form action = "saveAddress" method ="get" th:object="${address}">
+    <label for="street">Strada</label>
+    <input type="text" name="street" id="street"><br>
+    <label for = "houseNumber">Numero Abitazione</label>
+    <input type = "number" name="houseNumber" id="houseNumber"><br>
+    <label for="city">Città</label>
+    <input type="text" name="city" id="city"><br>
+    <label for = "country">Stato</label>
+    <input type="text" name = "country" id="country"><br>
+    <button>Aggiungi indirizzo</button>
+
+</form>
+</body>
+</html>

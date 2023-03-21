@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Teacher</title>
+    <style>
+      body {
+        color: white;
+      }
+    </style>
+    <style>
+      a {
+        color: white;
+      }
+    </style>
+</head>
+<body style="background-color:black">
+<a href="http://localhost:8080/home">Home page🏠</a><br>
+<h1>AGGIUNGI UN PROFESSORE 🧑‍🏫</h1>
+<form action = "saveTeacher" method ="get" th:object="${teacher}">
+    <label for="firstname">Firstname</label>
+    <input type="text" name="firstname" id="firstname"><br>
+
+    <label for="lastname">Lastname</label>
+    <input type="text" name="lastname" id="lastname"><br>
+
+    <label for = "dob">Data di nascita</label>
+    <input type="date" name= "dob" id="dob"><br>
+
+    <label for = "sex">Gender</label>
+    <select id="sex">
+        <option value="">Nessuno</option>
+        <option value="MALE">Uomo</option>
+        <option value="FEMALE">Donna</option>
+        <option value="UNDECIDED">Altro</option>
+    </select><br>
+
+    <label for = "email">Email</label>
+    <input type="email" name = "email" id="email"><br>
+
+    <label for = "cellNumber">Numero di telefono</label>
+    <input type="text" name = "cellNumber" id="cellNumber"><br>
+
+    <a href="http://localhost:8080/showAddressInsertForm">Aggiungi Indirizzo</a><br>
+
+    <label for = "username">Username</label>
+    <input type="text" name = "username" id="username"><br>
+
+    <label for = "password">Password</label>
+    <input type="password" name = "password" id="password"><br>
+
+    <label for = "pIVA">IVA</label>
+    <input type="text" name = "pIVA" id="pIVA"><br>
+
+    <label for = "isEmployee">Assunto</label>
+    <input type = "checkbox"  name= "isEmployee" id="isEmployee" checked><br>
+
+    <label for = "hireDate">Data d'assunzione</label>
+    <input type="date" name= "hireDate" id="hireDate"><br>
+
+    <label for = "fireDate">Data di licenziamento</label>
+    <input type="date" name= "fireDate" id="fireDate"><br>
+
+    <button>Aggiungi il professore</button>
+    <input type="reset" value="Reimposta tutto">
+</form>
+</body>
+</html>
